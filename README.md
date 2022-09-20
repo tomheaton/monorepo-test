@@ -1,3 +1,3 @@
 # monorepo-test
 
-a test monorepo
+monorepo-test

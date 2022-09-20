@@ -1,11 +1,10 @@
 {
-  "name": "monorepo-test",
+  "name": "@monorepo-test/utils",
   "version": "1.0.0",
   "author": "tomheaton",
   "license": "MIT",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
+  "files": [
+    "src"
   ]
 }
