@@ -1,4 +1,7 @@
 // Learn more https://docs.expo.dev/guides/monorepos
+/**
+ * @type {import('expo/metro-config')}
+ */
 const {getDefaultConfig} = require('expo/metro-config');
 const path = require('path');
 
@@ -8,7 +11,6 @@ const projectRoot = __dirname;
 const workspaceRoot = path.resolve(projectRoot, '../..');
 
 const config = getDefaultConfig(projectRoot);
-// console.log(JSON.stringify(config, null, 4));
 
 // If your monorepo tooling can give you the list of monorepo workspaces linked
 // in your app workspace, you can automate this list instead of hardcoding them.
@@ -16,8 +18,11 @@ const monorepoPackages = {
     '@monorepo-test/utils': path.resolve(workspaceRoot, 'packages/utils'),
 };
 
+// Add the additional `cjs` extension to the resolver
+config.resolver.sourceExts.push('cjs');
+
 // 1. Watch the local app folder, and all related packages (limiting the scope and speeding it up)
-// config.watchFolders = [workspaceRoot]
+config.watchFolders = [workspaceRoot]
 // config.watchFolders = [__dirname, ...Object.values(monorepoPackages)];
 // Add the monorepo workspaces as `extraNodeModules` to Metro.
 // If your monorepo tooling creates workspace symlinks in the `node_modules` folder,
