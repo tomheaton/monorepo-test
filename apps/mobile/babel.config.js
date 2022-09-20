@@ -10,6 +10,7 @@ module.exports = (api) => {
                 root: ".",
                 alias: {
                     "@components": "./src/components",
+                    "@lib": "./src/lib",
                     "@utils": "./src/utils",
                 },
             }],
