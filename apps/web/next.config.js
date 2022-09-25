@@ -1,4 +1,6 @@
 const withTM = require('next-transpile-modules')([
+    "@monorepo-test/api",
+    "@monorepo-test/react",
     "@monorepo-test/utils"
 ]);
 

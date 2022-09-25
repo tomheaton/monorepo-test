@@ -1,30 +1,53 @@
-import {StyleSheet, Text, View} from 'react-native';
+import React, {useState} from "react";
+import {Text, View} from 'react-native';
 import TestComponent from "@components/TestComponent";
 import {add} from "@utils/index";
+import tw from "@lib/tailwind";
+import Constants from "expo-constants";
+import {trpc} from "@utils/trpc";
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
+import {httpBatchLink} from '@trpc/client';
+import TrpcComponent from "@components/TrpcComponent";
+import superjson from 'superjson';
 
-const App = () => {
+const {manifest} = Constants;
+const localhost = `http://${manifest.debuggerHost?.split(":").shift()}:3000`;
+
+const App: React.FC = () => {
+    const [queryClient] = useState(() => new QueryClient());
+    const [trpcClient] = useState(() =>
+        trpc.createClient({
+            transformer: superjson,
+            links: [
+                httpBatchLink({
+                    url: `${localhost}/api/trpc`,
+                    headers() {
+                        return {};
+                    },
+                }),
+            ],
+        })
+    );
+
     return (
-        <View style={styles.container}>
-            <Text>
-                monorepo-test
-            </Text>
+        <trpc.Provider client={trpcClient} queryClient={queryClient}>
+            <QueryClientProvider client={queryClient}>
+                <View style={tw`flex-1 items-center justify-center`}>
+                    <Text style={tw`font-bold text-5xl`}>
+                        monorepo-test
+                    </Text>
 
-            <TestComponent/>
+                    <TestComponent/>
 
-            <Text>
-                Add: 5 + 7 = {add(5, 7)}
-            </Text>
-        </View>
+                    <Text>
+                        Add: 5 + 7 = {add(5, 7)}
+                    </Text>
+
+                    <TrpcComponent/>
+                </View>
+            </QueryClientProvider>
+        </trpc.Provider>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
 
 export default App;

@@ -1,0 +1,16 @@
+{
+  "name": "@monorepo-test/react",
+  "version": "1.0.0",
+  "author": "tomheaton",
+  "license": "MIT",
+  "private": true,
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "@monorepo-test/api": "*",
+    "@trpc/client": "^10.0.0-proxy-beta.7",
+    "@trpc/next": "^10.0.0-proxy-beta.7",
+    "superjson": "^1.10.0"
+  }
+}
