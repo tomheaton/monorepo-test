@@ -1,11 +1,13 @@
-import {StyleSheet, Text, View} from 'react-native';
+import React from "react";
+import {Text, View} from 'react-native';
 import TestComponent from "@components/TestComponent";
 import {add} from "@utils/index";
+import tw from "@lib/tailwind";
 
-const App = () => {
+const App: React.FC = () => {
     return (
-        <View style={styles.container}>
-            <Text>
+        <View style={tw`flex-1 items-center justify-center`}>
+            <Text style={tw`font-bold text-5xl`}>
                 monorepo-test
             </Text>
 
@@ -14,17 +16,12 @@ const App = () => {
             <Text>
                 Add: 5 + 7 = {add(5, 7)}
             </Text>
+
+            <Text>
+                tRPC: {true ? "Loading..." : "test"}
+            </Text>
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
 
 export default App;
