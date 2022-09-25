@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@monorepo-test/api": "*",
+    "@monorepo-test/react": "*",
     "@monorepo-test/utils": "*",
     "@tanstack/react-query": "^4.6.0",
     "@trpc/client": "^10.0.0-proxy-beta.7",

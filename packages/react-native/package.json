@@ -1,0 +1,10 @@
+{
+  "name": "@monorepo-test/react-native",
+  "version": "1.0.0",
+  "author": "tomheaton",
+  "license": "MIT",
+  "private": true,
+  "files": [
+    "src"
+  ]
+}
