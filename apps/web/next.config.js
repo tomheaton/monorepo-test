@@ -1,5 +1,6 @@
 const withTM = require('next-transpile-modules')([
-    "@monorepo-test/utils"
+    "@monorepo-test/utils",
+    "@monorepo-test/api"
 ]);
 
 /** @type {import('next').NextConfig} */
