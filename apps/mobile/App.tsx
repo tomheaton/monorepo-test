@@ -44,7 +44,6 @@ const App: React.FC = () => {
                     </Text>
 
                     <TrpcComponent/>
-
                 </View>
             </QueryClientProvider>
         </trpc.Provider>
