@@ -1,15 +1,12 @@
 import {createTRPCReact} from '@trpc/react';
 import type {AppRouter} from '@monorepo-test/api/src/routers/_app';
 import type {inferProcedureInput, inferProcedureOutput} from '@trpc/server';
-// import superjson from 'superjson';
 
 /**
  * A set of strongly-typed React hooks from your `AppRouter` type signature with `createReactQueryHooks`.
  * @link https://trpc.io/docs/react#3-create-trpc-hooks
  */
 export const trpc = createTRPCReact<AppRouter>();
-
-// export const transformer = superjson;
 
 /**
  * This is a helper method to infer the output of a query resolver

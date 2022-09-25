@@ -7,7 +7,8 @@ import Constants from "expo-constants";
 import {trpc} from "@utils/trpc";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import {httpBatchLink} from '@trpc/client';
-// import superjson from 'superjson';
+import TrpcComponent from "@components/TrpcComponent";
+import superjson from 'superjson';
 
 const {manifest} = Constants;
 const localhost = `http://${manifest.debuggerHost?.split(":").shift()}:3000`;
@@ -16,7 +17,7 @@ const App: React.FC = () => {
     const [queryClient] = useState(() => new QueryClient());
     const [trpcClient] = useState(() =>
         trpc.createClient({
-            // transformer: superjson,
+            transformer: superjson,
             links: [
                 httpBatchLink({
                     url: `${localhost}/api/trpc`,
@@ -27,8 +28,6 @@ const App: React.FC = () => {
             ],
         })
     );
-
-    const hello = trpc.hello.hello.useQuery({text: 'monorepo-test'});
 
     return (
         <trpc.Provider client={trpcClient} queryClient={queryClient}>
@@ -44,9 +43,8 @@ const App: React.FC = () => {
                         Add: 5 + 7 = {add(5, 7)}
                     </Text>
 
-                    <Text>
-                        tRPC: {!hello.data ? "Loading..." : hello.data.greeting}
-                    </Text>
+                    <TrpcComponent/>
+
                 </View>
             </QueryClientProvider>
         </trpc.Provider>

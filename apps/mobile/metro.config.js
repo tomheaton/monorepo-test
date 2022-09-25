@@ -15,6 +15,7 @@ const config = getDefaultConfig(projectRoot);
 // If your monorepo tooling can give you the list of monorepo workspaces linked
 // in your app workspace, you can automate this list instead of hardcoding them.
 const monorepoPackages = {
+    '@monorepo-test/react-native': path.resolve(workspaceRoot, 'packages/react-native'),
     '@monorepo-test/utils': path.resolve(workspaceRoot, 'packages/utils'),
 };
 

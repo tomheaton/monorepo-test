@@ -17,9 +17,11 @@
     "@trpc/client": "^10.0.0-proxy-beta.7",
     "@trpc/react": "^10.0.0-proxy-beta.7",
     "expo": "^46.0.0",
+    "expo-constants": "~13.2.4",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-native": "0.69.5",
+    "superjson": "^1.10.0",
     "twrnc": "^3.4.0"
   },
   "devDependencies": {

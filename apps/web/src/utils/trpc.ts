@@ -3,7 +3,7 @@ export * from '@monorepo-test/react/src/trpc';
 // import {httpBatchLink} from '@trpc/client';
 // import {createTRPCNext} from '@trpc/next';
 // import type {AppRouter} from "@server/routers/_app";
-// // import superjson from 'superjson';
+// import superjson from 'superjson';
 //
 // const getBaseUrl = (): string => {
 //     // browser should use relative path
@@ -25,7 +25,7 @@ export * from '@monorepo-test/react/src/trpc';
 // export const trpc = createTRPCNext<AppRouter>({
 //     config({ctx}) {
 //         return {
-//             // transformer: superjson,
+//             transformer: superjson,
 //             links: [
 //                 httpBatchLink({
 //                     /**
