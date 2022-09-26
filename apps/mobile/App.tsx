@@ -3,15 +3,11 @@ import {Text, View} from 'react-native';
 import TestComponent from "@components/TestComponent";
 import {add} from "@utils/index";
 import tw from "@lib/tailwind";
-import Constants from "expo-constants";
-import {trpc} from "@utils/trpc";
+import {getBaseUrl, trpc} from "@utils/trpc";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import {httpBatchLink} from '@trpc/client';
 import TrpcComponent from "@components/TrpcComponent";
 import superjson from 'superjson';
-
-const {manifest} = Constants;
-const localhost = `http://${manifest.debuggerHost?.split(":").shift()}:3000`;
 
 const App: React.FC = () => {
     const [queryClient] = useState(() => new QueryClient());
@@ -20,7 +16,7 @@ const App: React.FC = () => {
             transformer: superjson,
             links: [
                 httpBatchLink({
-                    url: `${localhost}/api/trpc`,
+                    url: `${getBaseUrl()}/api/trpc`,
                     headers() {
                         return {};
                     },
