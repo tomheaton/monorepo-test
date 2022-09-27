@@ -11,7 +11,7 @@ export const helloRouter = t.router({
         )
         .query(({input}) => {
             return {
-                greeting: `(test) hello${input?.text ?? 'world'}`,
+                greeting: `hello ${input?.text ?? 'world'}`,
             };
         }),
 });
