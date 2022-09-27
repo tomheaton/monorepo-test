@@ -25,13 +25,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.tomheaton.monorepotest"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
     },
     "extra": {
-      "apiUrl": "https://monorepo-test.tomheaton.dev"
+      "apiUrl": "https://monorepo-test.tomheaton.dev",
+      "eas": {
+        "projectId": "0f7107e9-e038-4ccd-8a33-5b688ffddcb7"
+      }
     }
   }
 }
