@@ -29,6 +29,9 @@
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
+    },
+    "extra": {
+      "apiUrl": "https://monorepo-test.tomheaton.dev"
     }
   }
 }
