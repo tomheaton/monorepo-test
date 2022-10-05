@@ -19,4 +19,5 @@ monorepo-test
 | [`api`](./packages/api)                   | api          |
 | [`react`](./packages/react)               | react        |
 | [`react-native`](./packages/react-native) | react-native |
+| [`ui`](./packages/ui)                     | ui           |
 | [`utils`](./packages/utils)               | utils        |

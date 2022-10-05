@@ -1,0 +1,12 @@
+{
+  "name": "@monorepo-test/ui",
+  "version": "1.0.0",
+  "author": "tomheaton",
+  "license": "MIT",
+  "private": true,
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+  }
+}
