@@ -16,8 +16,8 @@ monorepo-test
 
 | key                                       | value              |
 |-------------------------------------------|--------------------|
-| [`api`](./packages/api)                   | api                |
-| [`react`](./packages/react)               | react              |
-| [`react-native`](./packages/react-native) | react-native       |
-| [`ui`](./packages/ui)                     | ui _(coming soon)_ |
-| [`utils`](./packages/utils)               | utils              |
+| [`api`](./packages/api)                   | API                |
+| [`react`](./packages/react)               | React              |
+| [`react-native`](./packages/react-native) | React Native       |
+| [`ui`](./packages/ui)                     | UI _(coming soon)_ |
+| [`utils`](./packages/utils)               | Utils              |
