@@ -28,9 +28,6 @@
       },
       "package": "dev.tomheaton.monorepotest"
     },
-    "web": {
-      "favicon": "./assets/images/favicon.png"
-    },
     "extra": {
       "apiUrl": "https://monorepo-test.tomheaton.dev",
       "eas": {
