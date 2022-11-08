@@ -9,8 +9,8 @@
   ],
   "dependencies": {
     "@monorepo-test/api": "*",
-    "@trpc/client": "^10.0.0-proxy-beta.15",
-    "@trpc/next": "^10.0.0-proxy-beta.15",
-    "superjson": "^1.10.0"
+    "@trpc/client": "^10.0.0-rc.7",
+    "@trpc/next": "^10.0.0-rc.7",
+    "superjson": "^1.11.0"
   }
 }

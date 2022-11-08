@@ -9,6 +9,6 @@
   ],
   "dependencies": {
     "@monorepo-test/api": "*",
-    "@trpc/react": "^10.0.0-proxy-beta.15"
+    "@trpc/react-query": "^10.0.0-rc.7"
   }
 }
