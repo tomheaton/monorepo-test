@@ -1,3 +1,3 @@
-# monorepo-test - desktop
+# monorepo-test - apps
 
-monorepo-test - desktop
+monorepo-test - apps
