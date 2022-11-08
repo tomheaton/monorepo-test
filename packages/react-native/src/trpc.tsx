@@ -1,4 +1,4 @@
-import {createTRPCReact} from '@trpc/react';
+import {createTRPCReact} from '@trpc/react-query';
 import type {AppRouter} from '@monorepo-test/api/src/routers/_app';
 
 /**
