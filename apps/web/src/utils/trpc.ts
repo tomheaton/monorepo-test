@@ -1,1 +1,1 @@
-export * from '@monorepo-test/react/src/trpc';
+export * from '@monorepo-test/react';

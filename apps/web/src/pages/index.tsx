@@ -1,7 +1,7 @@
 import type {NextPage} from 'next';
 import Head from 'next/head';
-import TestComponent from "@components/TestComponent";
 import {add} from "@utils/index";
+import TestComponent from "@components/TestComponent";
 import TrpcComponent from "@components/TrpcComponent";
 
 const Index: NextPage = () => {

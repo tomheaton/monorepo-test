@@ -4,6 +4,7 @@
   "author": "tomheaton",
   "license": "MIT",
   "private": true,
+  "main": "./src/index.tsx",
   "files": [
     "src"
   ],
