@@ -1,6 +1,6 @@
 import {httpBatchLink} from '@trpc/client';
 import {createTRPCNext} from '@trpc/next';
-import type {AppRouter} from '@monorepo-test/api/src/routers/_app';
+import type {AppRouter} from '@monorepo-test/api';
 import superjson from 'superjson';
 
 const getBaseUrl = (): string => {

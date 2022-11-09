@@ -2,7 +2,7 @@ import Constants from "expo-constants";
 
 const {manifest} = Constants;
 
-export * from '@monorepo-test/react-native/src/trpc';
+export * from "@monorepo-test/react-native";
 
 export const getBaseUrl = (): string => {
     // assume localhost
