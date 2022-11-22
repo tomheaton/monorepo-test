@@ -1,31 +1,28 @@
 import type {NextPage} from 'next';
 import Head from 'next/head';
 import {add} from "@utils/index";
-import TestComponent from "@components/TestComponent";
 import TrpcComponent from "@components/TrpcComponent";
 
 const Index: NextPage = () => {
-    return (
-        <div className={"w-full h-screen flex flex-col items-center justify-center"}>
-            <Head>
-                <title>monorepo-test</title>
-                <meta name="description" content="monorepo-test"/>
-                <link rel="icon" href="/favicon.ico"/>
-            </Head>
+  return (
+    <div className={"w-full h-screen flex flex-col items-center justify-center"}>
+      <Head>
+        <title>monorepo-test</title>
+        <meta name="description" content="monorepo-test"/>
+        <link rel="icon" href="/favicon.ico"/>
+      </Head>
 
-            <h1 className={"font-bold text-5xl"}>
-                monorepo-test
-            </h1>
+      <h1 className={"font-bold text-5xl"}>
+        monorepo-test
+      </h1>
 
-            <TestComponent/>
+      <p>
+        Add: 5 + 7 = {add(5, 7)}
+      </p>
 
-            <p>
-                Add: 5 + 7 = {add(5, 7)}
-            </p>
-
-            <TrpcComponent/>
-        </div>
-    );
+      <TrpcComponent/>
+    </div>
+  );
 }
 
 export default Index;

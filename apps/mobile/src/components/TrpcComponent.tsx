@@ -1,15 +1,15 @@
 import React from "react";
-import {Text} from "react-native";
 import {trpc} from "@utils/trpc";
+import {CustomText} from "@components/index";
 
 const TestComponent: React.FC = () => {
-    const hello = trpc.hello.hello.useQuery({text: '@monorepo-test/mobile'});
+  const hello = trpc.hello.hello.useQuery({text: '@monorepo-test/mobile'});
 
-    return (
-        <Text>
-            tRPC: {!hello.data ? "Loading..." : hello.data.greeting}
-        </Text>
-    );
+  return (
+    <CustomText>
+      tRPC: {!hello.data ? "Loading..." : hello.data.greeting}
+    </CustomText>
+  );
 }
 
 export default TestComponent;
