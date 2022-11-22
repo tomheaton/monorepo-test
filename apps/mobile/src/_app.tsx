@@ -8,23 +8,27 @@ import TrpcComponent from "@components/TrpcComponent";
 
 const App: React.FC = () => {
 
-    return (
-        <TRPCProvider>
-            <View style={tw`flex-1 items-center justify-center`}>
-                <Text style={tw`font-bold text-5xl`}>
-                    monorepo-test
-                </Text>
+  return (
+    <TRPCProvider>
+      <View style={tw`flex-1 items-center justify-center`}>
+        <Text style={tw`font-bold text-5xl`}>
+          monorepo-test
+        </Text>
 
-                <TestComponent/>
+        <TestComponent/>
 
-                <Text>
-                    Add: 5 + 7 = {add(5, 7)}
-                </Text>
+        <Text>
+          Add: 5 + 7 = {add(5, 7)}
+        </Text>
 
-                <TrpcComponent/>
-            </View>
-        </TRPCProvider>
-    );
+        <Text>
+          Ali
+        </Text>
+
+        <TrpcComponent/>
+      </View>
+    </TRPCProvider>
+  );
 }
 
 export default App;
