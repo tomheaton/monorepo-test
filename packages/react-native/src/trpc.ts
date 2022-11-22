@@ -1,5 +1,5 @@
 import {createTRPCReact} from '@trpc/react-query';
-import type {AppRouter} from '@monorepo-test/api/src/routers/_app';
+import type {AppRouter} from '@monorepo-test/api';
 
 /**
  * A set of strongly-typed React hooks from your `AppRouter` type signature with `createReactQueryHooks`.

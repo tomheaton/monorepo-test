@@ -4,14 +4,12 @@
   "author": "tomheaton",
   "license": "MIT",
   "private": true,
-  "main": "./src/index.tsx",
-  "files": [
-    "src"
-  ],
+  "main": "./index.ts",
+  "types": "./index.ts",
   "dependencies": {
     "@monorepo-test/api": "*",
-    "@trpc/client": "^10.0.0-rc.7",
-    "@trpc/next": "^10.0.0-rc.7",
+    "@trpc/client": "^10.0.0",
+    "@trpc/next": "^10.0.0",
     "superjson": "^1.11.0"
   }
 }

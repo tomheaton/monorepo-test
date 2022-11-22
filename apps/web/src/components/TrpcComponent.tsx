@@ -2,7 +2,7 @@ import React from "react";
 import {trpc} from "@utils/trpc";
 
 const TrpcComponent: React.FC = () => {
-    const hello = trpc.hello.hello.useQuery({text: 'monorepo-test'});
+    const hello = trpc.hello.hello.useQuery({text: '@monorepo-test/web'});
 
     return (
         <p>
