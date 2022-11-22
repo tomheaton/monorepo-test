@@ -5,8 +5,6 @@ const nextConfig = {
     experimental: {
         transpilePackages: [
             "@monorepo-test/api",
-            "@monorepo-test/react",
-            "@monorepo-test/utils"
         ],
     },
 }

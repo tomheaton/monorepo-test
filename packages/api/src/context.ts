@@ -1,8 +1,8 @@
-import type {inferAsyncReturnType} from '@trpc/server';
-import type {CreateNextContextOptions} from '@trpc/server/adapters/next';
+import type {inferAsyncReturnType} from "@trpc/server";
+import type {CreateNextContextOptions} from "@trpc/server/adapters/next";
 
-interface CreateContextOptions {
-    // session: Session | null
+type CreateContextOptions = {
+  // session: Session | null
 }
 
 /**
@@ -10,15 +10,15 @@ interface CreateContextOptions {
  * This is useful for testing when we don't want to mock Next.js request/response
  */
 export const createContextInner = async (opts: CreateContextOptions) => {
-    return {};
-}
+  return {};
+};
 
 /**
  * Creates context for an incoming request
  * @link https://trpc.io/docs/context
  */
 export const createContext = async (opts: CreateNextContextOptions): Promise<Context> => {
-    return await createContextInner({});
-}
+  return await createContextInner({});
+};
 
 export type Context = inferAsyncReturnType<typeof createContextInner>;
