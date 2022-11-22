@@ -5,8 +5,7 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "apps/mobile",
-    "apps/web",
+    "apps/*",
     "packages/*"
   ]
 }
