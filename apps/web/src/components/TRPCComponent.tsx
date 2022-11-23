@@ -1,7 +1,7 @@
 import React from "react";
 import {trpc} from "@utils/trpc";
 
-const TrpcComponent: React.FC = () => {
+const TRPCComponent: React.FC = () => {
   const hello = trpc.hello.hello.useQuery({text: '@monorepo-test/web'});
 
   return (
@@ -11,4 +11,4 @@ const TrpcComponent: React.FC = () => {
   );
 }
 
-export default TrpcComponent;
+export default TRPCComponent;

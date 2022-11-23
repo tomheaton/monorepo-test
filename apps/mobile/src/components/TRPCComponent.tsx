@@ -2,7 +2,7 @@ import React from "react";
 import {trpc} from "@utils/trpc";
 import {CustomText} from "@components/index";
 
-const TestComponent: React.FC = () => {
+const TRPCComponent: React.FC = () => {
   const hello = trpc.hello.hello.useQuery({text: '@monorepo-test/mobile'});
 
   return (
@@ -12,4 +12,4 @@ const TestComponent: React.FC = () => {
   );
 }
 
-export default TestComponent;
+export default TRPCComponent;

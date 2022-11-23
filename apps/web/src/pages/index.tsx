@@ -1,7 +1,7 @@
 import type {NextPage} from 'next';
 import Head from 'next/head';
 import {add} from "@utils/index";
-import TrpcComponent from "@components/TrpcComponent";
+import TRPCComponent from "@components/TRPCComponent";
 
 const Index: NextPage = () => {
   return (
@@ -20,7 +20,7 @@ const Index: NextPage = () => {
         Add: 5 + 7 = {add(5, 7)}
       </p>
 
-      <TrpcComponent/>
+      <TRPCComponent/>
     </div>
   );
 }

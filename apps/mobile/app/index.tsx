@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {SplashScreen} from "expo-router";
 import {CustomText, CustomView} from "@components/index";
 import {add} from "@utils/index";
-import TrpcComponent from "@components/TrpcComponent";
+import TrpcComponent from "@components/TRPCComponent";
 
 export default function Index() {
   const [isReady, setReady] = useState<boolean>(false);
