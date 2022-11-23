@@ -4,8 +4,6 @@
   "author": "tomheaton",
   "license": "MIT",
   "private": true,
-  "main": "./src/index.ts",
-  "files": [
-    "src"
-  ]
+  "main": "./index.ts",
+  "types": "./index.ts"
 }
