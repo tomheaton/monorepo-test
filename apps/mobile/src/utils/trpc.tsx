@@ -1,5 +1,11 @@
 import {createTRPCReact} from "@trpc/react-query";
 import type {AppRouter} from "@monorepo-test/api";
+import Constants from "expo-constants";
+import React, {useState, type PropsWithChildren} from "react";
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
+import {httpBatchLink} from "@trpc/client";
+import superjson from "superjson";
+import type {inferRouterInputs, inferRouterOutputs} from "@trpc/server";
 
 /**
  * A set of typesafe hooks for consuming your API.
@@ -7,36 +13,29 @@ import type {AppRouter} from "@monorepo-test/api";
 export const trpc = createTRPCReact<AppRouter>();
 
 /**
- * Extend this function when going to production by
- * setting the baseUrl to your production API URL.
+ * Gets the IP address of your host-machine.
  */
-import Constants from "expo-constants";
+const getBaseUrl = (): string => {
+  // development
+  if (__DEV__) {
+    const localhost = Constants.manifest?.debuggerHost?.split(":").shift();
+    if (!localhost) {
+      throw new Error("Failed to get localhost, configure it manually!");
+    }
+    return `http://${localhost}:3000`;
+  }
 
-const getBaseUrl = () => {
-  /**
-   * Gets the IP address of your host-machine. If it cannot automatically find it,
-   * you'll have to manually set it. NOTE: Port 3000 should work for most but confirm
-   * you don't have anything else running on it, or you'd have to change it.
-   */
-  const localhost = Constants.manifest?.debuggerHost?.split(":")[0];
-  if (!localhost)
-    throw new Error("failed to get localhost, configure it manually");
-  return `http://${localhost}:3000`;
+  // production
+  return `${Constants.manifest?.extra?.apiUrl}`;
 };
 
 /**
  * A wrapper for your app that provides the TRPC context.
  * Use only in the main _layout.tsx
  */
-import React, {type PropsWithChildren} from "react";
-import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
-import {httpBatchLink} from "@trpc/client";
-import superjson from "superjson";
-
 export const TRPCProvider: React.FC<PropsWithChildren> = ({children}) => {
-  const [queryClient] = React.useState(() => new QueryClient());
-
-  const [trpcClient] = React.useState(() =>
+  const [queryClient] = useState(() => new QueryClient());
+  const [trpcClient] = useState(() =>
     trpc.createClient({
       transformer: superjson,
       links: [
@@ -55,3 +54,15 @@ export const TRPCProvider: React.FC<PropsWithChildren> = ({children}) => {
     </trpc.Provider>
   );
 };
+
+/**
+ * Inference helpers for input types
+ * @example type HelloInput = RouterInputs['example']['hello']
+ **/
+export type RouterInputs = inferRouterInputs<AppRouter>;
+
+/**
+ * Inference helpers for output types
+ * @example type HelloOutput = RouterOutputs['example']['hello']
+ **/
+export type RouterOutputs = inferRouterOutputs<AppRouter>;
