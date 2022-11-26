@@ -1,11 +1,10 @@
 import {createTRPCReact} from "@trpc/react-query";
-import type {AppRouter} from "@monorepo-test/api";
+import type {AppRouter, RouterInputs, RouterOutputs} from "@monorepo-test/api";
 import Constants from "expo-constants";
 import React, {useState, type PropsWithChildren} from "react";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import {httpBatchLink} from "@trpc/client";
 import superjson from "superjson";
-import type {inferRouterInputs, inferRouterOutputs} from "@trpc/server";
 
 /**
  * A set of typesafe hooks for consuming your API.
@@ -55,14 +54,4 @@ export const TRPCProvider: React.FC<PropsWithChildren> = ({children}) => {
   );
 };
 
-/**
- * Inference helpers for input types
- * @example type HelloInput = RouterInputs['example']['hello']
- **/
-export type RouterInputs = inferRouterInputs<AppRouter>;
-
-/**
- * Inference helpers for output types
- * @example type HelloOutput = RouterOutputs['example']['hello']
- **/
-export type RouterOutputs = inferRouterOutputs<AppRouter>;
+export type {RouterInputs, RouterOutputs};

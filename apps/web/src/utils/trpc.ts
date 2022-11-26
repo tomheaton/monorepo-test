@@ -1,7 +1,6 @@
 import {createTRPCNext} from "@trpc/next";
 import {httpBatchLink, loggerLink} from "@trpc/client";
-import type {inferRouterInputs, inferRouterOutputs} from "@trpc/server";
-import type {AppRouter} from "@monorepo-test/api";
+import type {AppRouter, RouterInputs, RouterOutputs} from "@monorepo-test/api";
 import superjson from "superjson";
 
 const getBaseUrl = (): string => {
@@ -40,14 +39,4 @@ export const trpc = createTRPCNext<AppRouter>({
   ssr: false,
 });
 
-/**
- * Inference helpers for input types
- * @example type HelloInput = RouterInputs['example']['hello']
- **/
-export type RouterInputs = inferRouterInputs<AppRouter>;
-
-/**
- * Inference helpers for output types
- * @example type HelloOutput = RouterOutputs['example']['hello']
- **/
-export type RouterOutputs = inferRouterOutputs<AppRouter>;
+export type {RouterInputs, RouterOutputs};
