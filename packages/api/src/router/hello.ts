@@ -15,4 +15,13 @@ export const helloRouter = t.router({
         greeting: `hello ${input?.text ?? "world"}`,
       };
     }),
+  createHello: t.procedure
+    .input(
+      z.object({
+        text: z.string(),
+      }),
+    )
+    .mutation(({input}) => {
+      console.log(`createHello: ${JSON.stringify(input)} @ ${new Date().toTimeString()}`);
+    }),
 });
