@@ -21,14 +21,17 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "dev.tomheaton.monorepotest",
+      "buildNumber": "2",
       "supportsTablet": true
     },
     "android": {
+      "package": "dev.tomheaton.monorepotest",
+      "versionCode": 2,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      },
-      "package": "dev.tomheaton.monorepotest"
+      }
     },
     "extra": {
       "apiUrl": "https://monorepo-test.tomheaton.dev",
