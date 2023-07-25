@@ -1,13 +1,13 @@
-import {Stack} from "expo-router";
-import {TRPCProvider} from "@utils/trpc";
-import {SafeAreaProvider, SafeAreaView} from "react-native-safe-area-context";
+import { TRPCProvider } from "@utils/trpc";
+import { Stack } from "expo-router";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function Layout() {
   return (
     <TRPCProvider>
       <SafeAreaProvider style={{flex: 1}}>
         <SafeAreaView style={{flex: 1}}>
-          <Stack screenOptions={{headerShown: false}}/>
+          <Stack screenOptions={{headerShown: false}} />
         </SafeAreaView>
       </SafeAreaProvider>
     </TRPCProvider>

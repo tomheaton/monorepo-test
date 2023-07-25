@@ -8,7 +8,6 @@
     "icon": "./assets/images/icon.png",
     "userInterfaceStyle": "light",
     "scheme": "myapp",
-    "jsEngine": "hermes",
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
@@ -38,6 +37,9 @@
       "eas": {
         "projectId": "0f7107e9-e038-4ccd-8a33-5b688ffddcb7"
       }
-    }
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }

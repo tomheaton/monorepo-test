@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from "react";
-import {SplashScreen} from "expo-router";
-import {CustomText, CustomView} from "@components/index";
-import {add} from "@utils/index";
-import TrpcComponent from "@components/TRPCComponent";
+import TRPCComponent from "@components/TRPCComponent";
+import { CustomText, CustomView } from "@components/index";
+import { add } from "@utils/index";
+import { SplashScreen } from "expo-router";
+import React, { useEffect, useState } from "react";
 
 export default function Index() {
   const [isReady, setReady] = useState<boolean>(false);
@@ -27,7 +27,7 @@ export default function Index() {
         Add: 5 + 7 = {add(5, 7)}
       </CustomText>
 
-      <TrpcComponent/>
+      <TRPCComponent/>
     </CustomView>
   );
 };
